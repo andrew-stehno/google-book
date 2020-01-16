@@ -3,6 +3,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const routes = require("./routes/apiRoutes");
+const mongoose = require("mongoose");
 
 // Define middleware
 app.use(express.urlencoded({ extended: true }));
@@ -21,6 +22,9 @@ app.use(routes);
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
 
 app.listen(PORT, function() {
   console.log(`API server now on port ${PORT}!`);
