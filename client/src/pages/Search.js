@@ -20,7 +20,7 @@ class Search extends Component {
         </Jumbotron>
         <Container fluid>
           <Row>
-            <Col size="md-6">
+            <Col size="sm-12">
               <BorderBox>
                 <form>
                   <h3>Book Search</h3>
@@ -33,9 +33,13 @@ class Search extends Component {
             </Col>
           </Row>
           <Row>
-            <Col size="md-6">
+            <Col size="sm-12">
               <BorderBox>
                   <h3>Results</h3>
+                  <BorderBox>
+                    <FormBtn>View</FormBtn>
+                    <FormBtn>Save</FormBtn>
+                  </BorderBox>
               </BorderBox>
             </Col>
           </Row>
