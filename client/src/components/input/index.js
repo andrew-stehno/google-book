@@ -6,7 +6,7 @@ import "./style.css";
 export function Input(props) {
   return (
     <div className="form-group">
-      <input className="form-control" {...props} />
+      <input className="form-control" id="search-input" {...props} />
     </div>
   );
 }

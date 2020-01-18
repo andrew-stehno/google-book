@@ -28,7 +28,7 @@ class Search extends Component {
       .then(res => {
         this.setState({ results: res.data });
         this.setState({books: this.state.results.items});
-        console.log(this.state.books);
+        document.getElementById('search-input').value = "";
       })
       .catch(err => console.log(err));
   };
@@ -64,8 +64,12 @@ class Search extends Component {
                   {this.state.books.map(list => {
                     return(
                       <Book
-                      key={list.volumeInfo.title}
+                      key={list.id}
                       title={list.volumeInfo.title}
+                      authors={list.volumeInfo.authors[0]}
+                      description={list.volumeInfo.description}
+                      // image={list.volumeInfo.imageLinks}
+                      link={list.volumeInfo.previewLink}
                       />
                     )
                   })}
