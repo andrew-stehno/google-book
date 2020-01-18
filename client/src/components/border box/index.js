@@ -3,7 +3,7 @@ import "./style.css";
 
 function BorderBox({children}) {
   return (
-    <div class="border border-dark">{children}</div>
+    <div className="border border-dark">{children}</div>
   );
 }
 
