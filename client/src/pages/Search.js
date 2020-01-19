@@ -13,8 +13,6 @@ class Search extends Component {
     books: []
   };
 
-  componentDidMount() {}
-
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -27,19 +25,31 @@ class Search extends Component {
     API.getBooks(this.state.bookSearch)
       .then(res => {
         this.setState({ results: res.data });
-        this.setState({books: this.state.results.items});
-        document.getElementById('search-input').value = "";
+        this.setState({ books: this.state.results.items });
+        document.getElementById("search-input").value = "";
       })
       .catch(err => console.log(err));
+  };
+
+  saveToDatabase = (title, author, description, link) => {
+    API.saveBook({
+      title,
+      author,
+      description,
+      link
+    })
+      .then(res => this.bookSaved())
+      .catch(err => console.log(err));
+  };
+
+  bookSaved = () => {
+    document.getElementById("saved-msg").value = "Your book has been saved!";
   };
 
   render() {
     return (
       <div>
-        <Jumbotron>
-          <h1>(React) Google Books Search</h1>
-          <h2>Search for and Save Books of Interest</h2>
-        </Jumbotron>
+        <Jumbotron />
         <Container fluid>
           <Row>
             <Col size="sm-12">
@@ -61,18 +71,19 @@ class Search extends Component {
             <Col size="sm-12">
               <BorderBox>
                 <h3>Results</h3>
-                  {this.state.books.map(list => {
-                    return(
-                      <Book
+                {this.state.books.map(list => {
+                  return (
+                    <Book
+                      saveToDatabase={this.saveToDatabase}
                       key={list.id}
                       title={list.volumeInfo.title}
                       authors={list.volumeInfo.authors[0]}
                       description={list.volumeInfo.description}
                       // image={list.volumeInfo.imageLinks}
                       link={list.volumeInfo.previewLink}
-                      />
-                    )
-                  })}
+                    />
+                  );
+                })}
               </BorderBox>
             </Col>
           </Row>

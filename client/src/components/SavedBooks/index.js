@@ -2,11 +2,11 @@ import React from "react";
 import BorderBox from "../border box";
 import { FormBtn } from "../input";
 
-const Book = props => {
+const SavedBooks = props => {
   return (
     <div>
       <BorderBox>
-        <FormBtn onClick={() => props.saveToDatabase(props.title, props.author, props.description, props.link)}>Save</FormBtn>
+        <FormBtn onClick={() => props.deleteBook(props.id)}>Delete</FormBtn>
         <FormBtn>
           <a href={props.link} rel="noopener noreferrer" target="_blank">
             View
@@ -22,4 +22,4 @@ const Book = props => {
   );
 };
 
-export default Book;
+export default SavedBooks;
