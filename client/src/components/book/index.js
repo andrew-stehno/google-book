@@ -1,6 +1,7 @@
 import React from "react";
 import BorderBox from "../border box";
 import { FormBtn } from "../input";
+import "./style.css";
 
 const Book = props => {
   return (
@@ -8,7 +9,7 @@ const Book = props => {
       <BorderBox>
         <FormBtn onClick={() => props.saveToDatabase(props.title, props.author, props.description, props.link)}>Save</FormBtn>
         <FormBtn>
-          <a href={props.link} rel="noopener noreferrer" target="_blank">
+          <a href={props.link} rel="noopener noreferrer" target="_blank" id="view">
             View
           </a>
         </FormBtn>

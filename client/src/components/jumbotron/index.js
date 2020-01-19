@@ -1,6 +1,6 @@
 import React from "react";
 
-function Jumbotron() {
+function Jumbotron({ children }) {
   return (
     <div
       style={{
@@ -11,8 +11,7 @@ function Jumbotron() {
       }}
       className="jumbotron"
     >
-      <h1>(React) Google Books Search</h1>
-      <h2>Search for and Save Books of Interest</h2>
+      {children}
     </div>
   );
 }

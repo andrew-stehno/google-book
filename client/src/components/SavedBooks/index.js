@@ -8,7 +8,7 @@ const SavedBooks = props => {
       <BorderBox>
         <FormBtn onClick={() => props.deleteBook(props.id)}>Delete</FormBtn>
         <FormBtn>
-          <a href={props.link} rel="noopener noreferrer" target="_blank">
+          <a href={props.link} rel="noopener noreferrer" target="_blank" id="view">
             View
           </a>
         </FormBtn>
