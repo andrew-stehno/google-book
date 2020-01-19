@@ -17,7 +17,6 @@ const Book = props => {
         <h5>Author: {props.authors}</h5>
         <h5>Synopsis:</h5>
         <p>{props.description}</p>
-        <p id="saved-msg"></p>
       </BorderBox>
     </div>
   );

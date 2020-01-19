@@ -50,8 +50,8 @@ class Search extends Component {
     return (
       <div>
         <Jumbotron>
-            <h1>(React) Google Books Search</h1>
-            <h2>Search for and Save Books of Interest</h2>
+          <h1>(React) Google Books Search</h1>
+          <h2>Search for and Save Books of Interest</h2>
         </Jumbotron>
         <Container fluid>
           <Row>
@@ -72,22 +72,26 @@ class Search extends Component {
           </Row>
           <Row>
             <Col size="sm-12">
-              <BorderBox>
-                <h3>Results</h3>
-                {this.state.books.map(list => {
-                  return (
-                    <Book
-                      saveToDatabase={this.saveToDatabase}
-                      key={list.id}
-                      title={list.volumeInfo.title}
-                      authors={list.volumeInfo.authors[0]}
-                      description={list.volumeInfo.description}
-                      // image={list.volumeInfo.imageLinks}
-                      link={list.volumeInfo.previewLink}
-                    />
-                  );
-                })}
-              </BorderBox>
+              {this.state.books.length ? (
+                <BorderBox>
+                  <h3>Results</h3>
+                  {this.state.books.map(list => {
+                    return (
+                      <Book
+                        saveToDatabase={this.saveToDatabase}
+                        key={list.id}
+                        title={list.volumeInfo.title}
+                        authors={list.volumeInfo.authors[0]}
+                        description={list.volumeInfo.description}
+                        // image={list.volumeInfo.imageLinks}
+                        link={list.volumeInfo.previewLink}
+                      />
+                    );
+                  })}
+                </BorderBox>
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
             </Col>
           </Row>
         </Container>

@@ -1,6 +1,7 @@
 import React from "react";
 import BorderBox from "../border box";
 import { FormBtn } from "../input";
+import { Link } from "react-router-dom";
 
 const SavedBooks = props => {
   return (
@@ -12,11 +13,12 @@ const SavedBooks = props => {
             View
           </a>
         </FormBtn>
+        <Link to={"/books/" + props.id}>
         <h3>{props.title}</h3>
-        <h5>Author: {props.authors}</h5>
+        </Link>
+        {/* <h5>Author: {props.authors}</h5>
         <h5>Synopsis:</h5>
-        <p>{props.description}</p>
-        <p id="saved-msg"></p>
+        <p>{props.description}</p> */}
       </BorderBox>
     </div>
   );
