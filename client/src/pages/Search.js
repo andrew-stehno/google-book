@@ -31,11 +31,11 @@ class Search extends Component {
       .catch(err => console.log(err));
   };
 
-  saveToDatabase = (title, author, description, link) => {
+  saveToDatabase = (title, authors, synopsis, link) => {
     API.saveBook({
       title,
-      author,
-      description,
+      authors,
+      synopsis,
       link
     })
       .then(res => this.bookSaved())
@@ -82,7 +82,7 @@ class Search extends Component {
                         key={list.id}
                         title={list.volumeInfo.title}
                         authors={list.volumeInfo.authors[0]}
-                        description={list.volumeInfo.description}
+                        synopsis={list.volumeInfo.synopsis}
                         // image={list.volumeInfo.imageLinks}
                         link={list.volumeInfo.previewLink}
                       />

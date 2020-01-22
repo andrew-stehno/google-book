@@ -7,7 +7,7 @@ const Book = props => {
   return (
     <div>
       <BorderBox>
-        <FormBtn onClick={() => props.saveToDatabase(props.title, props.author, props.description, props.link)}>Save</FormBtn>
+        <FormBtn onClick={() => props.saveToDatabase(props.title, props.authors, props.synopsis, props.link)}>Save</FormBtn>
         <FormBtn>
           <a href={props.link} rel="noopener noreferrer" target="_blank" id="view">
             View
@@ -16,7 +16,7 @@ const Book = props => {
         <h3>{props.title}</h3>
         <h5>Author: {props.authors}</h5>
         <h5>Synopsis:</h5>
-        <p>{props.description}</p>
+        <p>{props.synopsis}</p>
       </BorderBox>
     </div>
   );
