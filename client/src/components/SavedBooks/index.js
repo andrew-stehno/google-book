@@ -16,9 +16,6 @@ const SavedBooks = props => {
         <Link to={"/books/" + props.id}>
         <h3>{props.title}</h3>
         </Link>
-        {/* <h5>Author: {props.authors}</h5>
-        <h5>Synopsis:</h5>
-        <p>{props.description}</p> */}
       </BorderBox>
     </div>
   );

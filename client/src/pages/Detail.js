@@ -32,7 +32,7 @@ class Detail extends Component {
           <Row>
             <Col size="sm-12">
               <article>
-                <h3>Synopsis</h3>
+                <h3>Synopsis:</h3>
                 <p>{this.state.book.synopsis}</p>
               </article>
             </Col>

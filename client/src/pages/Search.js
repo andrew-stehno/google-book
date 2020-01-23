@@ -31,10 +31,10 @@ class Search extends Component {
       .catch(err => console.log(err));
   };
 
-  saveToDatabase = (title, authors, synopsis, link) => {
+  saveToDatabase = (title, author, synopsis, link) => {
     API.saveBook({
       title,
-      authors,
+      author,
       synopsis,
       link
     })
@@ -43,7 +43,8 @@ class Search extends Component {
   };
 
   bookSaved = () => {
-    document.getElementById("saved-msg").value = "Your book has been saved!";
+    document.getElementById("saved-msg").innerHTML =
+      "Your book has been saved!";
   };
 
   render() {
@@ -71,6 +72,9 @@ class Search extends Component {
             </Col>
           </Row>
           <Row>
+            <div id="saved-msg"></div>
+          </Row>
+          <Row>
             <Col size="sm-12">
               {this.state.books.length ? (
                 <BorderBox>
@@ -83,7 +87,6 @@ class Search extends Component {
                         title={list.volumeInfo.title}
                         authors={list.volumeInfo.authors[0]}
                         synopsis={list.volumeInfo.synopsis}
-                        // image={list.volumeInfo.imageLinks}
                         link={list.volumeInfo.previewLink}
                       />
                     );

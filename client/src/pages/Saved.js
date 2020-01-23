@@ -15,19 +15,15 @@ class Saved extends Component {
     this.loadDataBase();
   }
 
-  componentDidUpdate() {
-    this.loadDataBase();
-  }
-
-  loadDataBase() {
+  loadDataBase = () => {
     API.getBook()
       .then(res => this.setState({ book: res.data }))
       .catch(err => console.log(err));
   }
 
-  deleteBook(id) {
+  deleteBook = (id) => {
     API.deleteBook(id)
-      .then(res => console.log("Your book has been deleted!"))
+      .then(res => this.loadDataBase())
       .catch(err => console.log(err));
   }
 
@@ -54,7 +50,6 @@ class Saved extends Component {
                         title={list.title}
                         authors={list.author}
                         description={list.synopsis}
-                        // image={list.image}
                         link={list.link}
                       />
                     );
