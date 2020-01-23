@@ -24,7 +24,7 @@ app.get("*", function(req, res) {
 });
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user1:password1@ds213079.mlab.com:13079/heroku_k8lsgfhm");
 
 app.listen(PORT, function() {
   console.log(`API server now on port ${PORT}!`);
