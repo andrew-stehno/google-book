@@ -1,6 +1,6 @@
 # google-book
 
-![home page screenshot](./images/home.png)
+![home page screenshot](./client/public/images/home.png)
 
 ## MERN Stack
 
