@@ -17,7 +17,9 @@ To run locally:
 ```node server.js```
 
 ![home page screenshot](./client/public/images/search.png)
+
 ![home page screenshot](./client/public/images/saved.png)
+
 ![home page screenshot](./client/public/images/view.png)
 
 
